@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import PartTimePage from "./page/chat";
+import SubtitleExtractor from "./page/youtube_page";
+import SubtractHeader from "./components/header.jsx";
+import SubtractGuideComponent from "./components/subtract_guide.jsx";
+import BaseSubtitleComponent from "./components/subtitle_base_component.jsx";
+import SubIntroPage from "./page/sub_intropage.jsx"
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {/* 항상 표시되는 컴포넌트 */}
+      <SubtractHeader />
+      <SubtractGuideComponent />
+      
+      {/* 조건에 따라 바뀌는 컴포넌트 */}
+      <Routes>
+        <Route path="/" element={<SubIntroPage />} />
+        <Route path="/subtitle" element={<BaseSubtitleComponent />} />
+      </Routes>
+    </Router>
   );
 }
 
