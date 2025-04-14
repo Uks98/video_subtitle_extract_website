@@ -14,7 +14,7 @@ const SubtractHeader = () => {
 
         {/* 공유하기 버튼 */}
         <button className="relative group text-gray-700 font-medium py-2">
-          공유하기
+          {/* 공유하기 */}
           {/* 호버 시 아래 검정색 라인 */}
           <span className="absolute left-0 bottom-0 w-full h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
         </button>

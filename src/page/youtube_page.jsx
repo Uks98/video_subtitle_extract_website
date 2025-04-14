@@ -52,9 +52,10 @@ const SubtitleExtractor = () => {
       getVideoId(youtubeUrl);
       const data = await response.json();
       setResult(data); // zustand store의 result 상태 업데이트
+      console.log(data + "데이터 넘어옴");
       await fetchYoutubeVideoInfo(
         getVideoId(youtubeUrl),
-        process.env.YOUTUBE_KEY
+        process.env.REACT_APP_YOUTUBE_KEY
       );
       navigate("/subtitle");
       setYoutubeUrl("");
